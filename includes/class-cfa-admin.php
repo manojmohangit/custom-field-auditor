@@ -30,7 +30,7 @@ class Custom_Field_Auditor_Admin {
 
     public function enqueue_assets( $hook ) {
         if ( 'settings_page_custom-field-auditor' !== $hook ) return;
-        wp_enqueue_style( 'cfa-admin-css', CFA_URL . 'assets/css/cfa-admin.css', array(), CFA_VERSION );
+        wp_enqueue_style( 'cfa-admin-css', CFA_URL . 'admin/css/cfa-admin.css', array(), CFA_VERSION );
     }
 
     public function render_page() {
