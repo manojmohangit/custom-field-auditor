@@ -1,4 +1,4 @@
-/* Styles for Admin Section of Custom Field Auditor */
+/* Modern Styles for Custom Field Auditor */
 .cfa-wrap {
     margin: 20px;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -13,11 +13,39 @@
     border: 1px solid #eef2f7;
 }
 
+.cfa-wrap .notice {
+    margin: 5px 0 25px 0;
+    border-left-width: 4px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    font-size: 14px;
+    padding: 1px 12px;
+}
+
+.cfa-wrap .notice-success {
+    border-left-color: #38a169;
+    background: #f0fff4;
+    color: #22543d;
+}
+
 .cfa-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    /* Allow notices to wrap */
     margin-bottom: 30px;
+}
+
+/* Handle displaced notices moved by WordPress common.js */
+.cfa-header .notice,
+.cfa-header .updated,
+.cfa-header .error {
+    flex-basis: 100%;
+    width: 100%;
+    order: -1;
+    /* Force to top */
+    margin: 0 0 20px 0 !important;
 }
 
 .cfa-table {
@@ -119,12 +147,14 @@
 }
 
 .cfa-btn-primary {
-    background: #3182ce;
+    background: #4f46e5;
     color: #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .cfa-btn-primary:hover {
-    background: #2b6cb0;
+    background: #4338ca;
+    transform: translateY(-1px);
 }
 
 .cfa-btn-secondary {
@@ -135,4 +165,66 @@
 
 .cfa-btn-secondary:hover {
     background: #e2e8f0;
+}
+
+.cfa-btn-small {
+    padding: 6px 14px;
+    font-size: 13px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 32px;
+}
+
+.cfa-btn-edit {
+    background: #ebf4ff;
+    color: #3182ce;
+    border: 1px solid #bee3f8;
+}
+
+.cfa-btn-edit:hover {
+    background: #bee3f8;
+    color: #2b6cb0;
+}
+
+.cfa-btn-delete {
+    background: #fff5f5;
+    color: #e53e3e;
+    border: 1px solid #fed7d7;
+}
+
+.cfa-btn-delete:hover {
+    background: #fed7d7;
+    color: #c53030;
+}
+
+.cfa-actions-cell {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.cfa-actions-cell .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 4px;
+    margin-top: -2px;
+}
+
+/* Fix for Whitespace/Newline visibility in Revisions Diff */
+.diff-deletedline,
+.diff-addedline,
+.diff-context,
+.diff-deletedline div,
+.diff-addedline div,
+.diff-context div {
+    white-space: pre-wrap !important;
+    word-break: break-all;
+    font-family: Consolas, Monaco, 'Lucida Console', monospace;
+    font-size: 13px;
+    min-height: 1em;
+    /* Ensure empty lines still have height */
 }
